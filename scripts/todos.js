@@ -6,7 +6,7 @@ let editedTodoElement;
 async function loadTodos() {
   let response;
   try {
-    response = await fetch('http://todolistv2022.herokuapp.com/todos');
+    response = await fetch('https://todolistv2022.herokuapp.com/todos');
   } catch (error) {
     alert('Something went wrong!');
     return;
@@ -54,7 +54,7 @@ async function createTodo(todoText) {
   let response;
 
   try {
-    response = await fetch('http://todolistv2022.herokuapp.com/todos', {
+    response = await fetch('https://todolistv2022.herokuapp.com/todos', {
       method: 'POST',
       body: JSON.stringify({
         text: todoText,
@@ -84,7 +84,7 @@ async function updateTodo(newTodoText) {
   let response;
 
   try {
-    response = await fetch('http://todolistv2022.herokuapp.com/todos/' + todoId, {
+    response = await fetch('https://todolistv2022.herokuapp.com/todos/' + todoId, {
       method: 'PATCH',
       body: JSON.stringify({
         text: newTodoText,
@@ -117,7 +117,7 @@ async function deleteTodo(event) {
   let response;
 
   try {
-    response = await fetch('http://todolistv2022.herokuapp.com/todos/' + todoId, {
+    response = await fetch('https://todolistv2022.herokuapp.com/todos/' + todoId, {
       method: 'DELETE',
     });
   } catch (error) {
